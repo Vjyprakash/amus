@@ -1,66 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="amuS Technologies - Explore job opportunities">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <title>amuS Technologies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amus Technologies - RPA Solutions</title>
+  <meta name="description" content="Amus Technologies: AI-driven robotic process automation for scalable, precise, and user-centric solutions.">
+  <meta name="keywords" content="RPA, AI, automation, Amus Technologies, scalable innovation">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>amuS Technologies</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#jobs">Job Opportunities</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="service-item">
-                <h3>Web Development</h3>
-                <p>We build responsive and modern web applications.</p>
-            </div>
-            <div class="service-item">
-                <h3>Mobile Development</h3>
-                <p>We create mobile applications for both iOS and Android.</p>
-            </div>
-            <div class="service-item">
-                <h3>Consultancy</h3>
-                <p>Expert advice on technology and project management.</p>
-            </div>
-        </section>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Header() {
+      return (
+        <header className="bg-gradient-to-r from-blue-900 to-teal-500 text-white py-16 text-center">
+          <h1 className="text-5xl font-bold mb-4">Amus Technologies</h1>
+          <p className="text-xl mb-6">Innovate. Automate. Scale.</p>
+          <div className="inline-block">
+            <svg className="w-16 h-16 mx-auto mb-4" viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="4">
+              <circle cx="50" cy="50" r="40" />
+              <path d="M50 10 A40 40 0 0 1 90 50 A40 40 0 0 1 50 90" />
+              <path d="M50 30 L50 10" />
+              <path d="M30 50 L10 50" />
+              <path d="M70 50 L90 50" />
+              <path d="M50 50 L50 20" stroke="teal" strokeWidth="6" />
+            </svg>
+            <p className="text-sm italic">Logo: Neural node with scalable arrow</p>
+          </div>
+        </header>
+      );
+    }
 
-        <section id="jobs">
-            <h2>Job Opportunities</h2>
-            <p>Check out our latest job openings.</p>
-            <ul id="job-list"></ul>
+    function RPASection() {
+      return (
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">What is Robotic Process Automation (RPA)?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-4 text-teal-500">RPA Powered by AI</h3>
+                <p className="text-gray-600">
+                  At Amus Technologies, RPA uses software bots to automate repetitive, rule-based tasks, enhanced by AI-driven automation. Our solutions mimic human actions—such as data entry, invoice processing, or customer support—delivering unmatched efficiency and precision.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-4 text-teal-500">Why Choose Amus RPA?</h3>
+                <ul className="text-gray-600 list-disc pl-5">
+                  <li><strong>Efficiency:</strong> Free your team from mundane tasks to focus on strategic goals.</li>
+                  <li><strong>Precision:</strong> Minimize errors with machine-driven accuracy.</li>
+                  <li><strong>Scalability:</strong> Seamlessly expand automation as your business grows.</li>
+                  <li><strong>Cost Savings:</strong> Reduce operational costs with streamlined workflows.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-4 text-teal-500">Real-World Applications</h3>
+              <p className="text-gray-600">
+                Amus RPA transforms industries by automating tasks like processing invoices, responding to customer inquiries, managing IT helpdesks, and more. Our user-centric design ensures solutions integrate seamlessly with your existing systems, requiring minimal setup.
+              </p>
+            </div>
+          </div>
         </section>
+      );
+    }
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+    function AcronymSection() {
+      const items = [
+        { letter: 'A', text: 'AI-Driven Automation', desc: 'Combine RPA with AI to streamline complex workflows.' },
+        { letter: 'M', text: 'Machine Precision', desc: 'Ensure flawless execution with advanced technology.' },
+        { letter: 'U', text: 'User-Centric Design', desc: 'Deliver intuitive solutions tailored to your team.' },
+        { letter: 'S', text: 'Scalable Innovation', desc: 'Grow effortlessly with future-ready automation.' },
+      ];
+
+      return (
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">The Amus Advantage: A.M.U.S.</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {items.map((item) => (
+                <div key={item.letter} className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl font-bold text-teal-500 mb-2">{item.letter}</div>
+                  <h3 className="text-xl font-semibold mb-2">{item.text}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
-    </main>
+      );
+    }
 
-    <footer>
-        <p>&copy; 2023 amuS Technologies. All rights reserved.</p>
-    </footer>
-    
-    <script src="app.js"></script>
+    function CTASection() {
+      return (
+        <section className="py-16 text-center bg-blue-900 text-white">
+          <h2 className="text-3xl font-bold mb-4">Transform Your Business with Amus RPA</h2>
+          <p className="text-lg mb-8">Discover how our AI-driven automation can streamline your operations.</p>
+          <a
+            href="mailto:contact@amustechnologies.com"
+            className="inline-block bg-teal-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-teal-600"
+          >
+            Request a Demo
+          </a>
+        </section>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+          <RPASection />
+          <AcronymSection />
+          <CTASection />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
 </body>
 </html>
